@@ -16,14 +16,9 @@ function retrieveContacts() {
   hideMessage();
   fetch(ENDPOINT)
     .then(function (response) {
-      // response.json() returns a json string,
-      // returning it will convert it
-      // to a pure JavaScript
-      // object for the next then's callback
       return response.json();
     })
     .then(function (contacts) {
-      // contacts is a JavaScript object here
       buildTable(contacts);
     })
     .catch(function (error) {
@@ -55,11 +50,8 @@ function hideMessage() {
 }
 
 function buildTable(contacts) {
-  // Clear out the table body first.
   clearTable();
 
-  // Add the table content.
-  // addLineToHTMLTable(element.fname, element.lname)
   contacts.forEach(function (curr) {
     addLineToHTMLTable(curr.login, curr.avatar_url);
   });
@@ -67,18 +59,17 @@ function buildTable(contacts) {
   showClearButton();
 }
 
-// Add a line to the HTML table
 function addLineToHTMLTable(loginVariable, avatarUrlVariable) {
-  // Get the body of the table using the selector API
   var tableBody = document.querySelector("#tableContactBody");
 
-  // Add a new row at the end of the table
   var newRow = tableBody.insertRow();
 
-  // add  new cells to the row
   var loginVariableCell = newRow.insertCell();
   loginVariableCell.innerHTML = loginVariable;
 
+  var img = document.createElement("img");
+  img.src = avatarUrlVariable;
+
   var avatarUrlVariableCell = newRow.insertCell();
-  avatarUrlVariableCell.innerHTML = avatarUrlVariable;
+  avatarUrlVariableCell.appendChild(img);
 }
