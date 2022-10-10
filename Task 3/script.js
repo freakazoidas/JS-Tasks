@@ -60,16 +60,16 @@ function buildTable(contacts) {
 }
 
 function addLineToHTMLTable(loginVariable, avatarUrlVariable) {
-  var tableBody = document.querySelector("#tableContactBody");
+  let tableBody = document.querySelector("#tableContactBody");
 
-  var newRow = tableBody.insertRow();
+  let newRow = tableBody.insertRow();
 
-  var loginVariableCell = newRow.insertCell();
+  let loginVariableCell = newRow.insertCell();
   loginVariableCell.innerHTML = loginVariable;
 
-  var img = document.createElement("img");
+  let img = document.createElement("img");
   img.src = avatarUrlVariable;
 
-  var avatarUrlVariableCell = newRow.insertCell();
+  let avatarUrlVariableCell = newRow.insertCell();
   avatarUrlVariableCell.appendChild(img);
 }
