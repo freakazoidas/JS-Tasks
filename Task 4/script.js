@@ -38,11 +38,20 @@ function addLineToHTMLTable(brandVariable, modelsVariable) {
 
   let brandVariableCell = newRow.insertCell();
   brandVariableCell.innerHTML = brandVariable;
+  brandVariableCell.classList.add("brandHead");
+  // let modelsVariableCell = newRow.insertCell();
+  // modelsVariableCell.innerHTML = modelsVariable;
 
-  let linebreak = document.createElement("br");
+  let modelsDiv = document.createElement("div");
+  modelsDiv.innerText = modelsVariable;
+  brandVariableCell.appendChild(modelsDiv);
+  modelsDiv.classList.add("brandContent");
 
-  let modelsVariableCell = newRow.insertCell();
-  modelsVariableCell.innerHTML = modelsVariable;
+  // for (let i = 0; i < modelsVariable.length; i++) {
+  //   let modelsDiv = document.createElement("div");
+  //   modelsDiv.innerText = modelsVariable[i];
+  //   brandVariableCell.appendChild(modelsDiv);
+  // }
 }
 
 retrieveContacts();
