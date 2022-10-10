@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="style.css" />
     <!-- Custom JS -->
     <script defer src="./script.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+      integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <header>
@@ -22,10 +28,45 @@
           <input type="submit" id="submit-btn" value="Calculate" />
         </form>
         <!-- Place for output after form submission -->
-        <div id="output"></div>
+        <div id="output" class="output"></div>
       </div>
     </main>
+    <script>
+      function Conversion(weight) {
+        // const emptyft = document.getElementById("#output");
+        // emptyfy.innerHTML = "";
+        this.weight = weight;
+        this.addToDiv = function () {
+          const emptyfy = document.getElementById("output");
+          emptyfy.innerHTML = "";
+          const newLine = document.createElement("br");
 
+          const lbData = document.createElement("span");
+          lbData.textContent =
+            `Weight in pounds - ` + Number(this.weight) * 2.2046 + ` lb `;
+
+          const gData = document.createElement("span");
+          gData.textContent =
+            `Weight in grams - ` + Number(this.weight) / 0.001 + ` g `;
+
+          const ozData = document.createElement("span");
+          ozData.textContent =
+            `Weight in ounces - ` + Number(this.weight) * 35.274 + ` oz `;
+
+          document.querySelector("#output").append(lbData);
+          document.querySelector("#output").append(gData);
+          document.querySelector("#output").append(ozData);
+        };
+      }
+
+      document.querySelector("form").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const search = document.getElementById("search").value;
+
+        const converted = new Conversion(search);
+        converted.addToDiv();
+      });
+    </script>
     <footer>
       <!-- Footer code -->
     </footer>
