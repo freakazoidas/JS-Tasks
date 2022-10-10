@@ -13,7 +13,6 @@ const ENDPOINT = "cars.json";
 
 function retrieveContacts() {
   const ENDPOINT = "cars.json";
-  hideMessage();
   fetch(ENDPOINT)
     .then(function (response) {
       return response.json();
@@ -25,3 +24,25 @@ function retrieveContacts() {
       console.log("Error during fetch: " + error.message);
     });
 }
+
+function buildTable(contacts) {
+  contacts.forEach(function (curr) {
+    addLineToHTMLTable(curr.brand, curr.models);
+  });
+}
+
+function addLineToHTMLTable(brandVariable, modelsVariable) {
+  let tableBody = document.querySelector("#tableBody");
+
+  let newRow = tableBody.insertRow();
+
+  let brandVariableCell = newRow.insertCell();
+  brandVariableCell.innerHTML = brandVariable;
+
+  let linebreak = document.createElement("br");
+
+  let modelsVariableCell = newRow.insertCell();
+  modelsVariableCell.innerHTML = modelsVariable;
+}
+
+retrieveContacts();
