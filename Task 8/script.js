@@ -5,8 +5,7 @@ subtraction(a, b) - priima du skaičius ir grąžina jų skirtumą.
 multiplication(a, b) - priima du skaičius ir grąžina jų daugybos rezultatą;
 division(a, b) - priima du skaičius ir grąžina jų dalybos rezultatą;
 ------------------------------------------------------------------------------------ */
-// Not sure if this is ES6 or ES5
-
+// method #1
 const a = 4;
 const b = 5;
 
@@ -41,8 +40,8 @@ const object4methods = [sum, subs, mult, div];
 console.log(object4methods);
 
 /////////////////////////////
+// method #2
 
-// this is ES5?
 function calculate(number1, number2, operator) {
   if (!number1 || !number2) {
     return "Invalid number";
