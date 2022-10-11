@@ -16,17 +16,40 @@
     <main>
       <div class="wrapper">
         <div class="btn-container">
-          <button id="btn">Show Users</button>
+          <button id="btn" onclick="retrieveContacts();">Show Users</button>
         </div>
         <div class="output-cointainer">
           <h1>Github Users</h1>
           <div id="output">
             <!-- Results goes here -->
             <p id="message">Press "Show Users" button to see users</p>
+            <div class="container">
+              <table>
+                <thead>
+                  <tr class="hide" id="tableHeader">
+                    <th>Login</th>
+                    <th>Avatar</th>
+                  </tr>
+                </thead>
+                <tbody id="tableContactBody"></tbody>
+              </table>
+    </div class="hide">
+    <div class="container" >
+      <button id="clear-button" class="hide" onclick="clearTable();">
+        Clear Table
+      </button>
+    </div>
+
+            </div>
           </div>
         </div>
       </div>
     </main>
+
+    <!--  -->
+
+
+
 
     <footer>
       <!-- Footer code -->
