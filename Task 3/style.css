@@ -33,7 +33,6 @@
   font-weight: bold;
   font-size: 2em;
   text-align: center;
-  font-size: 5vw;
 }
 
 .btn-container #btn:hover {
@@ -117,7 +116,7 @@ td {
 }
 
 table {
-  font-size: 3vw;
+  font-size: 2vmax;
   border-collapse: separate;
   border-spacing: 0;
 }
@@ -199,8 +198,8 @@ td:last-child {
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
 }
-
-@media only screen and (max-width: 600px) {
+/* Having trouble with making break points work overall */
+@media only screen and (max-width: 450px) {
   tr > td:nth-child(1) {
     font-size: 20px;
   }
