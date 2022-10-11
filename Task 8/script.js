@@ -61,14 +61,12 @@ function calculate(number1, number2, operator) {
       return number1 - number2;
   }
 }
-console.log(calculate(2, 3, "+"));
+// console.log(calculate(2, 3, "+"));
 
-const sumF2 = (a, b) => calculate(a, b, "+");
-const subsF2 = (a, b) => calculate(a, b, "-");
-const multF2 = (a, b) => calculate(a, b, "*");
-const divF2 = (a, b) => calculate(a, b, "/");
+const sumF2 = calculate(a, b, "+");
+const subsF2 = calculate(a, b, "-");
+const multF2 = calculate(a, b, "*");
+const divF2 = calculate(a, b, "/");
 
-console.log(sumF2(2, 3));
-console.log(subsF2(2, 3));
-console.log(multF2(2, 3));
-console.log(divF2(2, 3));
+const object4method2 = [sumF2, subsF2, multF2, divF2];
+console.log(object4method2);
