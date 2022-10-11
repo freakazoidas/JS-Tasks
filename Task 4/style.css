@@ -37,7 +37,7 @@
   font-size: 20px;
   color: #333;
   padding: 15px 50px;
-  background-color: rgb(245, 249, 253);
+  background-color: rgb(226, 255, 235);
 }
 
 .brandContent {
@@ -52,9 +52,23 @@ tr {
 }
 
 body {
-  background-color: rgb(247, 244, 240);
+  background-color: rgb(254, 255, 242);
 }
 
 #output {
+  display: flex;
+  justify-content: center;
+
   margin: 10px 20px;
+  width: 60%;
+}
+/* Having trouble with making break points work overall */
+@media (max-width: 450px) {
+  .brandContent {
+    font-size: 30px;
+  }
+
+  .brandHead {
+    font-size: 40px;
+  }
 }
